@@ -5,6 +5,6 @@ target 'Data-list' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for Data-list
+pod 'Alamofire', '~> 4.4'
 
 end
