@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		E5DD80D073EB337479DA2F8E /* Pods_Data_list.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D1380C04F5107B1086EA812 /* Pods_Data_list.framework */; };
+		E70C5A59233D573600003E9C /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C5A58233D573600003E9C /* EntryCell.swift */; };
+		E70C5A5C233D593500003E9C /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C5A5B233D593500003E9C /* Configurable.swift */; };
+		E70C5A5F233D5C6E00003E9C /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C5A5E233D5C6E00003E9C /* AddEntryViewController.swift */; };
 		E7391B6F233BECAC00DB4223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7391B6E233BECAC00DB4223 /* AppDelegate.swift */; };
 		E7391B76233BECAC00DB4223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7391B74233BECAC00DB4223 /* Main.storyboard */; };
 		E7391B78233BECAD00DB4223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7391B77233BECAD00DB4223 /* Assets.xcassets */; };
@@ -26,6 +29,9 @@
 /* Begin PBXFileReference section */
 		3D1380C04F5107B1086EA812 /* Pods_Data_list.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Data_list.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43E6C6D22C7DE378C8C5B81C /* Pods-Data-list.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data-list.debug.xcconfig"; path = "Target Support Files/Pods-Data-list/Pods-Data-list.debug.xcconfig"; sourceTree = "<group>"; };
+		E70C5A58233D573600003E9C /* EntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
+		E70C5A5B233D593500003E9C /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
+		E70C5A5E233D5C6E00003E9C /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
 		E7391B6B233BECAC00DB4223 /* Data-list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Data-list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7391B6E233BECAC00DB4223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7391B75233BECAC00DB4223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +71,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E70C5A57233D572200003E9C /* UI models */ = {
+			isa = PBXGroup;
+			children = (
+				E70C5A58233D573600003E9C /* EntryCell.swift */,
+			);
+			path = "UI models";
+			sourceTree = "<group>";
+		};
+		E70C5A5A233D591800003E9C /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E70C5A5B233D593500003E9C /* Configurable.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		E7391B62233BECAC00DB4223 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +108,8 @@
 		E7391B6D233BECAC00DB4223 /* Data-list */ = {
 			isa = PBXGroup;
 			children = (
+				E70C5A5A233D591800003E9C /* Common */,
+				E70C5A57233D572200003E9C /* UI models */,
 				E757ECDC233C09AE00DAAF11 /* Codable models */,
 				E757ECC5233BF31A00DAAF11 /* NetworkService */,
 				E757ECD9233C05BD00DAAF11 /* ViewModels */,
@@ -110,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				E746E115233CC312001DCB8E /* ListViewController.swift */,
+				E70C5A5E233D5C6E00003E9C /* AddEntryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -305,8 +330,11 @@
 				E757ECCD233BF31A00DAAF11 /* NetworkRequestable.swift in Sources */,
 				E746E116233CC312001DCB8E /* ListViewController.swift in Sources */,
 				E7391B6F233BECAC00DB4223 /* AppDelegate.swift in Sources */,
+				E70C5A5C233D593500003E9C /* Configurable.swift in Sources */,
 				E757ECD0233BF31A00DAAF11 /* NetworkService.swift in Sources */,
 				E746E114233CC1B9001DCB8E /* NetworkServiceConfiguration.swift in Sources */,
+				E70C5A59233D573600003E9C /* EntryCell.swift in Sources */,
+				E70C5A5F233D5C6E00003E9C /* AddEntryViewController.swift in Sources */,
 				E746E118233CC8B2001DCB8E /* SessionResponse.swift in Sources */,
 				E746E11D233CE69A001DCB8E /* ListViewModel.swift in Sources */,
 			);
