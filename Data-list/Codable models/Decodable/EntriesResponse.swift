@@ -10,20 +10,25 @@ import Foundation
 
 struct EntriesResponse: Decodable {
     let status: Int
-    let data: [[Entries]]
+    let entries: [[EntryResponse]]
+    
+    private enum CodingKeys: String, CodingKey {
+        case status
+        case entries = "data"
+    }
 }
 
-struct Entries: Decodable {
+struct EntryResponse: Decodable {
     let id: String
     let text: String
     let dateCreated: String
-    let dateModified: String
+    let dateChanged: String
     
     private enum CodingKeys: String, CodingKey {
         case id
         case text = "body"
         case dateCreated = "da"
-        case dateModified = "dm"
+        case dateChanged = "dm"
     }
 }
 

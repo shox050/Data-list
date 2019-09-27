@@ -34,6 +34,8 @@ class ListViewController: UITableViewController {
         
         if let destinationVC = segue.destination as? AddEntryController {
             
+        } else if let destinationVC = segue.destination as? EntryInfoController {
+            
         }
         
         
@@ -43,7 +45,7 @@ class ListViewController: UITableViewController {
 // MARK: - UITableViewDataSource
 extension ListViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listViewModel.entriesArray.count
+        return listViewModel.entries.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,7 +54,7 @@ extension ListViewController {
             return UITableViewCell()
         }
         
-        entryCell.configure(with: listViewModel.entriesArray[indexPath.row])
+        entryCell.configure(with: listViewModel.entries[indexPath.row])
         
         return entryCell
     }

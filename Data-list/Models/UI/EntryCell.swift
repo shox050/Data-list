@@ -19,7 +19,7 @@ class EntryCell: UITableViewCell {
 }
 
 extension EntryCell: Configurable {
-    typealias DataSourceType = Entries
+    typealias DataSourceType = EntryResponse
     
     func configure(with dataSource: EntryCell.DataSourceType) {
         lDateCreated.text = dataSource.dateCreated

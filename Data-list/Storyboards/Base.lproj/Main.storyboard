@@ -130,6 +130,11 @@
                         <viewLayoutGuide key="safeArea" id="oT8-CM-X8r"/>
                     </view>
                     <navigationItem key="navigationItem" title="Entry info" id="FQj-3p-gR9"/>
+                    <connections>
+                        <outlet property="lDateChanged" destination="OIU-oI-tze" id="2gt-y7-5k5"/>
+                        <outlet property="lDateCreated" destination="tek-Te-Wc5" id="ugO-1w-agG"/>
+                        <outlet property="tvText" destination="biH-nh-L5q" id="D9x-8W-WfO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="feg-vM-078" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -156,17 +161,26 @@
                                 <rect key="frame" x="206" y="518" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="actionAdd:" destination="wwd-Nu-PRR" eventType="touchUpInside" id="klj-OF-F96"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5e-m1-Eqp">
                                 <rect key="frame" x="77" y="518" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="actionCancel:" destination="wwd-Nu-PRR" eventType="touchUpInside" id="Yyp-TC-Y9h"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="5Iw-gA-Fn4"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add new entry" id="Zd3-BZ-h51"/>
+                    <connections>
+                        <outlet property="tvText" destination="M1l-6w-H1A" id="qC5-ZX-pqj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Poy-mL-eaK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,7 +10,7 @@ import Foundation
 
 class ListViewModel {
     
-    var entriesArray: [Entries] = []
+    var entries: [Entry] = []
     
     private let networkService: NetworkRequestable = NetworkService()
     
@@ -38,7 +38,7 @@ extension ListViewModel {
     
     func getEntries() {
         networkService.getEntries { response in
-            response.data.forEach { entry in
+            response.entries.forEach { entry in
                 print(entry)
             }
             print(response)
