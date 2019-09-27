@@ -10,8 +10,16 @@ import Foundation
 
 class ListViewModel {
     
+    var entriesArray: [Entries] = []
+    
     private let networkService: NetworkRequestable = NetworkService()
     
+    
+    
+}
+
+// MARK: - Methods
+extension ListViewModel {
     func getSession(_ completion: @escaping () -> Void) {
         
         guard UserDefaults.standard.string(forKey: Keys.session) == nil else {

@@ -59,10 +59,12 @@
                             <outlet property="delegate" destination="kIb-F5-K1H" id="Kdn-Yo-n3b"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="List" id="R4M-GU-i4B"/>
+                    <navigationItem key="navigationItem" title="List" id="R4M-GU-i4B">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="gle-c2-zVR"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="tvList" destination="ZIa-Xn-m88" id="HcE-5l-SyN"/>
-                        <segue destination="jsv-VX-jAV" kind="show" id="aH4-Vq-haf"/>
+                        <segue destination="jsv-VX-jAV" kind="show" identifier="showAddViewController" id="aH4-Vq-haf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBy-PU-uCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

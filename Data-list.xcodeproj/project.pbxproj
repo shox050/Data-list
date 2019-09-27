@@ -11,6 +11,7 @@
 		E70C5A59233D573600003E9C /* EntryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C5A58233D573600003E9C /* EntryCell.swift */; };
 		E70C5A5C233D593500003E9C /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C5A5B233D593500003E9C /* Configurable.swift */; };
 		E70C5A5F233D5C6E00003E9C /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C5A5E233D5C6E00003E9C /* AddEntryViewController.swift */; };
+		E70C5A61233D5D3300003E9C /* AddEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C5A60233D5D3300003E9C /* AddEntryViewModel.swift */; };
 		E7391B6F233BECAC00DB4223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7391B6E233BECAC00DB4223 /* AppDelegate.swift */; };
 		E7391B76233BECAC00DB4223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7391B74233BECAC00DB4223 /* Main.storyboard */; };
 		E7391B78233BECAD00DB4223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7391B77233BECAD00DB4223 /* Assets.xcassets */; };
@@ -24,6 +25,8 @@
 		E757ECD1233BF31A00DAAF11 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757ECCC233BF31A00DAAF11 /* Endpoint.swift */; };
 		E757ECE2233C0C6100DAAF11 /* AuthorizationPathConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757ECE1233C0C6100DAAF11 /* AuthorizationPathConfiguration.swift */; };
 		E757ECEC233C120F00DAAF11 /* EntriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757ECEB233C120F00DAAF11 /* EntriesResponse.swift */; };
+		E7B3971B233DD18E00D96951 /* AddEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B3971A233DD18E00D96951 /* AddEntryController.swift */; };
+		E7EE683C233DF63200DF242B /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE683B233DF63200DF242B /* ReachabilityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,7 @@
 		E70C5A58233D573600003E9C /* EntryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryCell.swift; sourceTree = "<group>"; };
 		E70C5A5B233D593500003E9C /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		E70C5A5E233D5C6E00003E9C /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
+		E70C5A60233D5D3300003E9C /* AddEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewModel.swift; sourceTree = "<group>"; };
 		E7391B6B233BECAC00DB4223 /* Data-list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Data-list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7391B6E233BECAC00DB4223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7391B75233BECAC00DB4223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,8 @@
 		E757ECCC233BF31A00DAAF11 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E757ECE1233C0C6100DAAF11 /* AuthorizationPathConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPathConfiguration.swift; sourceTree = "<group>"; };
 		E757ECEB233C120F00DAAF11 /* EntriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesResponse.swift; sourceTree = "<group>"; };
+		E7B3971A233DD18E00D96951 /* AddEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryController.swift; sourceTree = "<group>"; };
+		E7EE683B233DF63200DF242B /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		F8031369F2583290AA477345 /* Pods-Data-list.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data-list.release.xcconfig"; path = "Target Support Files/Pods-Data-list/Pods-Data-list.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +117,7 @@
 				E70C5A5A233D591800003E9C /* Common */,
 				E70C5A57233D572200003E9C /* UI models */,
 				E757ECDC233C09AE00DAAF11 /* Codable models */,
-				E757ECC5233BF31A00DAAF11 /* NetworkService */,
+				E757ECC5233BF31A00DAAF11 /* Network */,
 				E757ECD9233C05BD00DAAF11 /* ViewModels */,
 				E7391B83233BED7100DB4223 /* Controllers */,
 				E7391B84233BED7E00DB4223 /* Storyboards */,
@@ -133,8 +139,8 @@
 		E7391B83233BED7100DB4223 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				E746E115233CC312001DCB8E /* ListViewController.swift */,
-				E70C5A5E233D5C6E00003E9C /* AddEntryViewController.swift */,
+				E7B39718233DD16900D96951 /* Definition */,
+				E7B39719233DD17500D96951 /* Implementation */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -148,13 +154,14 @@
 			path = Storyboards;
 			sourceTree = "<group>";
 		};
-		E757ECC5233BF31A00DAAF11 /* NetworkService */ = {
+		E757ECC5233BF31A00DAAF11 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				E7EE683B233DF63200DF242B /* ReachabilityManager.swift */,
 				E757ECC6233BF31A00DAAF11 /* Definition */,
 				E757ECC8233BF31A00DAAF11 /* Implementation */,
 			);
-			path = NetworkService;
+			path = Network;
 			sourceTree = "<group>";
 		};
 		E757ECC6233BF31A00DAAF11 /* Definition */ = {
@@ -180,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				E746E11C233CE69A001DCB8E /* ListViewModel.swift */,
+				E70C5A60233D5D3300003E9C /* AddEntryViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -199,6 +207,23 @@
 				E746E117233CC8B2001DCB8E /* SessionResponse.swift */,
 			);
 			path = Decodable;
+			sourceTree = "<group>";
+		};
+		E7B39718233DD16900D96951 /* Definition */ = {
+			isa = PBXGroup;
+			children = (
+				E7B3971A233DD18E00D96951 /* AddEntryController.swift */,
+			);
+			path = Definition;
+			sourceTree = "<group>";
+		};
+		E7B39719233DD17500D96951 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				E746E115233CC312001DCB8E /* ListViewController.swift */,
+				E70C5A5E233D5C6E00003E9C /* AddEntryViewController.swift */,
+			);
+			path = Implementation;
 			sourceTree = "<group>";
 		};
 		F48715A799FDD5A4011D93E1 /* Frameworks */ = {
@@ -324,9 +349,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7EE683C233DF63200DF242B /* ReachabilityManager.swift in Sources */,
 				E757ECD1233BF31A00DAAF11 /* Endpoint.swift in Sources */,
 				E757ECEC233C120F00DAAF11 /* EntriesResponse.swift in Sources */,
 				E757ECE2233C0C6100DAAF11 /* AuthorizationPathConfiguration.swift in Sources */,
+				E70C5A61233D5D3300003E9C /* AddEntryViewModel.swift in Sources */,
 				E757ECCD233BF31A00DAAF11 /* NetworkRequestable.swift in Sources */,
 				E746E116233CC312001DCB8E /* ListViewController.swift in Sources */,
 				E7391B6F233BECAC00DB4223 /* AppDelegate.swift in Sources */,
@@ -334,6 +361,7 @@
 				E757ECD0233BF31A00DAAF11 /* NetworkService.swift in Sources */,
 				E746E114233CC1B9001DCB8E /* NetworkServiceConfiguration.swift in Sources */,
 				E70C5A59233D573600003E9C /* EntryCell.swift in Sources */,
+				E7B3971B233DD18E00D96951 /* AddEntryController.swift in Sources */,
 				E70C5A5F233D5C6E00003E9C /* AddEntryViewController.swift in Sources */,
 				E746E118233CC8B2001DCB8E /* SessionResponse.swift in Sources */,
 				E746E11D233CE69A001DCB8E /* ListViewModel.swift in Sources */,

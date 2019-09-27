@@ -26,3 +26,4 @@ struct Entries: Decodable {
         case dateModified = "dm"
     }
 }
+
