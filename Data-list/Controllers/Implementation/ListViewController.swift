@@ -13,6 +13,10 @@ class ListViewController: UITableViewController {
     private let listViewModel = ListViewModel()
     
     @IBOutlet private weak var tvList: UITableView!
+    @IBAction private func actionAddEntry(_ sender: UIBarButtonItem) {
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -18,9 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         ReachabilityManager.shared.startReachabilityObserver()
         
+        
         return true
     }
-
-
 }
 

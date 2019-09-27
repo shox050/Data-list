@@ -60,11 +60,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="List" id="R4M-GU-i4B">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="gle-c2-zVR"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="gle-c2-zVR">
+                            <connections>
+                                <action selector="actionAddEntry:" destination="kIb-F5-K1H" id="77a-L1-8xK"/>
+                                <segue destination="wwd-Nu-PRR" kind="show" identifier="showAddEntryViewController" id="8eZ-xV-axS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tvList" destination="ZIa-Xn-m88" id="HcE-5l-SyN"/>
-                        <segue destination="jsv-VX-jAV" kind="show" identifier="showAddViewController" id="aH4-Vq-haf"/>
+                        <segue destination="jsv-VX-jAV" kind="show" identifier="showEntryInfoViewController" id="aH4-Vq-haf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBy-PU-uCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -89,21 +94,83 @@
             </objects>
             <point key="canvasLocation" x="76.875" y="108.80281690140845"/>
         </scene>
-        <!--View Controller-->
+        <!--Entry info-->
         <scene sceneID="ybt-72-6Lz">
             <objects>
-                <viewController id="jsv-VX-jAV" sceneMemberID="viewController">
+                <viewController id="jsv-VX-jAV" customClass="EntryInfoViewController" customModule="Data_list" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QPw-0Y-yhe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="da" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tek-Te-Wc5">
+                                <rect key="frame" x="16" y="58" width="130" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dm" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OIU-oI-tze">
+                                <rect key="frame" x="174" y="58" width="130" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="biH-nh-L5q">
+                                <rect key="frame" x="0.0" y="87" width="320" height="481"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="oT8-CM-X8r"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FQj-3p-gR9"/>
+                    <navigationItem key="navigationItem" title="Entry info" id="FQj-3p-gR9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="feg-vM-078" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1884" y="109"/>
+            <point key="canvasLocation" x="1955.625" y="433.0985915492958"/>
+        </scene>
+        <!--Add new entry-->
+        <scene sceneID="uKf-j0-cYV">
+            <objects>
+                <viewController id="wwd-Nu-PRR" customClass="AddEntryViewController" customModule="Data_list" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3kx-4j-S5g">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="M1l-6w-H1A">
+                                <rect key="frame" x="0.0" y="44" width="320" height="453"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UgI-kM-g8U">
+                                <rect key="frame" x="206" y="518" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y5e-m1-Eqp">
+                                <rect key="frame" x="77" y="518" width="48" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Cancel"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="5Iw-gA-Fn4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add new entry" id="Zd3-BZ-h51"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Poy-mL-eaK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1955.625" y="-278.87323943661971"/>
         </scene>
     </scenes>
 </document>

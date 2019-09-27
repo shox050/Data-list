@@ -27,6 +27,9 @@
 		E757ECEC233C120F00DAAF11 /* EntriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757ECEB233C120F00DAAF11 /* EntriesResponse.swift */; };
 		E7B3971B233DD18E00D96951 /* AddEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B3971A233DD18E00D96951 /* AddEntryController.swift */; };
 		E7EE683C233DF63200DF242B /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE683B233DF63200DF242B /* ReachabilityManager.swift */; };
+		E7EE683E233E031800DF242B /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE683D233E031800DF242B /* UIViewController+alert.swift */; };
+		E7EE6841233E0EA100DF242B /* UIAlertController+show.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE6840233E0EA100DF242B /* UIAlertController+show.swift */; };
+		E7EE6843233E11EF00DF242B /* EntryInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE6842233E11EF00DF242B /* EntryInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +56,9 @@
 		E757ECEB233C120F00DAAF11 /* EntriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesResponse.swift; sourceTree = "<group>"; };
 		E7B3971A233DD18E00D96951 /* AddEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryController.swift; sourceTree = "<group>"; };
 		E7EE683B233DF63200DF242B /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		E7EE683D233E031800DF242B /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
+		E7EE6840233E0EA100DF242B /* UIAlertController+show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+show.swift"; sourceTree = "<group>"; };
+		E7EE6842233E11EF00DF242B /* EntryInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryInfoViewController.swift; sourceTree = "<group>"; };
 		F8031369F2583290AA477345 /* Pods-Data-list.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data-list.release.xcconfig"; path = "Target Support Files/Pods-Data-list/Pods-Data-list.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				E70C5A5B233D593500003E9C /* Configurable.swift */,
+				E7EE683F233E032000DF242B /* Extensions */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -222,8 +229,18 @@
 			children = (
 				E746E115233CC312001DCB8E /* ListViewController.swift */,
 				E70C5A5E233D5C6E00003E9C /* AddEntryViewController.swift */,
+				E7EE6842233E11EF00DF242B /* EntryInfoViewController.swift */,
 			);
 			path = Implementation;
+			sourceTree = "<group>";
+		};
+		E7EE683F233E032000DF242B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E7EE683D233E031800DF242B /* UIViewController+alert.swift */,
+				E7EE6840233E0EA100DF242B /* UIAlertController+show.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		F48715A799FDD5A4011D93E1 /* Frameworks */ = {
@@ -353,6 +370,9 @@
 				E757ECD1233BF31A00DAAF11 /* Endpoint.swift in Sources */,
 				E757ECEC233C120F00DAAF11 /* EntriesResponse.swift in Sources */,
 				E757ECE2233C0C6100DAAF11 /* AuthorizationPathConfiguration.swift in Sources */,
+				E7EE6843233E11EF00DF242B /* EntryInfoViewController.swift in Sources */,
+				E7EE683E233E031800DF242B /* UIViewController+alert.swift in Sources */,
+				E7EE6841233E0EA100DF242B /* UIAlertController+show.swift in Sources */,
 				E70C5A61233D5D3300003E9C /* AddEntryViewModel.swift in Sources */,
 				E757ECCD233BF31A00DAAF11 /* NetworkRequestable.swift in Sources */,
 				E746E116233CC312001DCB8E /* ListViewController.swift in Sources */,
