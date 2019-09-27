@@ -20,17 +20,20 @@ class ListViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        listViewModel.getSession() {
-//            self.listViewModel.addEntries(withText: "Hello, world!") {
-//                self.listViewModel.getEntries()
-//            }
-//        }
-
+                
+        listViewModel.getSession() { [weak self] in
+            guard let this = self else { return }
+            
+            this.listViewModel.getEntries() {
+                DispatchQueue.main.async {
+                    this.tvList.reloadData()
+                }
+                print("RELOAD")
+            }
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         
         if let destinationVC = segue.destination as? AddEntryController {
             
@@ -49,7 +52,7 @@ extension ListViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+                
         guard let entryCell = tableView.dequeueReusableCell(withIdentifier: "entryCell") as? EntryCell else {
             return UITableViewCell()
         }
@@ -68,4 +71,8 @@ extension ListViewController {
         
         
     }
+    
+//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        return CGFloat(100)
+//    }
 }

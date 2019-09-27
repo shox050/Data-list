@@ -13,6 +13,7 @@ class ListViewModel {
     var entries: [Entry] = []
     
     private let networkService: NetworkRequestable = NetworkService()
+    private let entryResponseConverter: EntryResponseConvertable = EntryResponseConverter()
     
     
     
@@ -36,12 +37,17 @@ extension ListViewModel {
         }
     }
     
-    func getEntries() {
-        networkService.getEntries { response in
-            response.entries.forEach { entry in
-                print(entry)
+    func getEntries(_ completion: @escaping () -> Void) {
+        networkService.getEntries { [weak self] response in
+            
+            guard let this = self else { return }
+            
+            response.entries.forEach { data in
+                data.forEach { entry in
+                    this.entries.append(this.entryResponseConverter.convert(entry))
+                    completion()
+                }
             }
-            print(response)
         }
     }
     
