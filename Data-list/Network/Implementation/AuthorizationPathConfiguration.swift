@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AuthorizationPathConfiguration {
+struct AuthorizationPathConfiguration: AuthorizationConfigurable {
     
     var url: URL? {
         var urlComponents = URLComponents()

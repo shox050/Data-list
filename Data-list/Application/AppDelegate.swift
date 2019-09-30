@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         ReachabilityManager.shared.startReachabilityObserver()
-        
+        print("ReachabilityManager.shared.startReachabilityObserver()")
         
         return true
     }

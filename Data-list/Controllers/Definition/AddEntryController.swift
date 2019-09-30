@@ -9,5 +9,5 @@
 import Foundation
 
 protocol AddEntryController {
-    
+    var delegate: AddEntryDelegate? { get set }
 }

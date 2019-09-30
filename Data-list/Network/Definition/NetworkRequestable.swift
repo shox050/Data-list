@@ -9,9 +9,11 @@
 import Foundation
 
 protocol NetworkRequestable {
-    func getSession(_ completion: @escaping(SessionResponse) -> Void)
+    func getSession<T>(responseType: T.Type,
+                       _ completion: @escaping(RequestResult<SessionResponse, ResponseError>) -> Void) where T: Decodable
     
-    func getEntries(_ completion: @escaping (EntriesResponse) -> Void)
+    func getEntries<T>(responseType: T.Type,
+                       _ completion: @escaping (RequestResult<EntriesResponse, ResponseError>) -> Void)
     
-    func addEntries(withText text: String, _ completion: @escaping () -> Void)
+    func addEntry(withText text: String, _ completion: @escaping (RequestResult<Data, ResponseError>) -> Void)
 }

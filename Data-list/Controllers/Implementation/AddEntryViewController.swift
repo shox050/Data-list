@@ -9,27 +9,37 @@
 import UIKit
 
 protocol AddEntryDelegate: class {
-    func didAdd(_ entry: EntryResponse)
+    func didAddEntry()
 }
 
 class AddEntryViewController: UIViewController {
     
     weak var delegate: AddEntryDelegate?
+        
+    private let addEntryViewModel = AddEntryViewModel()
+    
     
     @IBOutlet private weak var tvText: UITextView!
     
     @IBAction private func actionAdd(_ sender: UIButton) {
-        
-    }
-    
-    @IBAction private func actionCancel(_ sender: UIButton) {
-//        delegate?.didAdd(<#T##entry: Entries##Entries#>)
+        sender.isEnabled = false
+        addEntryViewModel.addEntry(withText: tvText.text) { [weak self] in
+            self?.delegate?.didAddEntry()
+            self?.dismiss(animated: true, completion: nil)
+        }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tvText.becomeFirstResponder()
     }
+}
+
+
+// MARK: - AddEntryController
+extension AddEntryViewController: AddEntryController {
+    
 }
 

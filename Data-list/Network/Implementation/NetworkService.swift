@@ -24,7 +24,6 @@ class NetworkService {
             .validate()
             .responseData(queue: executionQueue) { response in
                 completion(response)
-                return
         }
     }
 }
@@ -32,62 +31,90 @@ class NetworkService {
 
 // MARK: - NetworkRequestable
 extension NetworkService: NetworkRequestable {
-    func getSession(_ completion: @escaping(SessionResponse) -> Void) {
+    
+    func getSession<T>(responseType: T.Type, _ completion: @escaping(RequestResult<SessionResponse, ResponseError>) -> Void) where T: Decodable {
         
-        defaultRequest(.newSession) { response in
-            guard let responseData = response.data else {
-                print("No data from response - getSession")
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            
-            do {
-                let sessionResponse = try decoder.decode(SessionResponse.self, from: responseData)
-                print("sessionResponse ", sessionResponse)
-                completion(sessionResponse)
-                return
+        executionQueue.async { [weak self] in
+            self?.defaultRequest(.getSession) { response in
                 
-            } catch let error {
-                print("Decode SessionResponse cacth error: ", error)
+                if let error = response.error {
+                    print("Response have error: ", error)
+                    completion(.failure(.network))
+                    return
+                }
+                
+                guard let responseData = response.data else {
+                    print("No data from response - getSession")
+                    return
+                }
+                
+                let decoder = JSONDecoder()
+                
+                do {
+                    let sessionResponse = try decoder.decode(SessionResponse.self, from: responseData)
+                    print("sessionResponse ", sessionResponse)
+                    completion(.success(sessionResponse))
+                    
+                } catch let error {
+                    print("Decode SessionResponse cacth error: ", error)
+                    completion(.failure(.decoding))
+                }
             }
         }
     }
     
     
-    func getEntries(_ completion: @escaping (EntriesResponse) -> Void) {
+    func getEntries<T>(responseType: T.Type, _ completion: @escaping (RequestResult<EntriesResponse, ResponseError>) -> Void) {
         
-        defaultRequest(.listEntries) { response in
-            guard let responseData = response.data else {
-                print("No data from response - getEntries")
-                return
-            }
-            
-            let decoder = JSONDecoder()
-            
-            do {
-                let entrisResponse = try decoder.decode(EntriesResponse.self, from: responseData)
-                print("entrisResponse ", entrisResponse)
-                completion(entrisResponse)
-                return
+        executionQueue.async { [weak self] in
+            self?.defaultRequest(.getEntries) { response in
                 
-            } catch let error {
-                print("Decode EntriesResponse catch error: ", error)
+                if let error = response.error {
+                    print("Response have error: ", error)
+                    completion(.failure(.network))
+                    return
+                }
+                
+                guard let responseData = response.data else {
+                    print("No data from response - getEntries")
+                    completion(.failure(.parsing))
+                    return
+                }
+                
+                let decoder = JSONDecoder()
+                
+                do {
+                    let entrisResponse = try decoder.decode(EntriesResponse.self, from: responseData)
+//                    print("entrisResponse ", entrisResponse)
+                    completion(.success(entrisResponse))
+                    
+                } catch let error {
+                    print("Decode EntriesResponse catch error: ", error)
+                    completion(.failure(.decoding))
+                }
             }
         }
     }
     
     
-    func addEntries(withText text: String, _ completion: @escaping () -> Void) {
-        defaultRequest(.addEntries(text)) { response in
-            guard let responseData = response.data else {
-                print("No data from response - addEntries")
-                return
+    func addEntry(withText text: String, _ completion: @escaping (RequestResult<Data, ResponseError>) -> Void) {
+        
+        executionQueue.async { [weak self] in
+            self?.defaultRequest(.addEntries(text)) { response in
+                
+                if let error = response.error {
+                    print("Response have error: ", error)
+                    completion(.failure(.network))
+                    return
+                }
+                
+                guard let data = response.data else {
+                    completion(.failure(.parsing))
+                    return
+                }
+                                
+                completion(.success(data))
             }
-            
-            print(String(data: responseData, encoding: .utf8))
-            completion()
-            return
         }
     }
 }

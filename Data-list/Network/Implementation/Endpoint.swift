@@ -13,44 +13,69 @@ enum Endpoint: URLRequestConvertible {
     
     static let baseUrl = "https://bnet.i-partner.ru/testAPI/"
     
-    case newSession
-    case listEntries
+    case getSession
+    case getEntries
     case addEntries(String)
+    
     
     var parameters: [String: Any]? {
         switch self {
-        case .newSession:
-            return ["a": "new_session"]
+        case .getSession:
+            return [Keys.getSession: endpointPath.rawValue]
 
-        case .listEntries:
-            guard let session = UserDefaults.standard.string(forKey: "session") else {
+        case .getEntries:
+            guard let sessionValue = UserDefaults.standard.string(forKey: Keys.session) else {
                 print("UserDefaults not have session value")
                 break
             }
-            return ["a": "get_entries", "session": session]
+            return [Keys.getEntries: endpointPath.rawValue, Keys.session: sessionValue]
             
         case .addEntries(let text):
-            guard let session = UserDefaults.standard.string(forKey: "session") else {
+            guard let sessionValue = UserDefaults.standard.string(forKey: Keys.session) else {
                 print("UserDefaults not have session value")
                 break
             }
-            return ["session": session, "body": text, "a": "add_entry"]
+            return [Keys.session: sessionValue, Keys.body: text, Keys.addEntry: endpointPath.rawValue]
         }
         
         return nil
     }
     
+
+    private enum EndpointPath: String {
+        case getSession = "new_session"
+        case getEntries = "get_entries"
+        case addEntry = "add_entry"
+    }
+    
+    private var endpointPath: EndpointPath {
+        switch self {
+        case .getSession: return .getSession
+        case .getEntries: return .getEntries
+        case .addEntries(_): return .addEntry
+        }
+    }
+    
     func asURLRequest() throws -> URLRequest {
         let request: URLRequest = {
             var request = URLRequest(url: URL(string: Endpoint.baseUrl)!)
-
+            
             request.httpMethod = HTTPMethod.post.rawValue
-            request.addValue(NetworkServiceConfiguration().token, forHTTPHeaderField: "token")
+            request.addValue(NetworkServiceConfiguration().token, forHTTPHeaderField: Keys.token)
             return request
         }()
         
         return try URLEncoding.default.encode(request, with: parameters)
     }
+}
+
+fileprivate struct Keys {
+    static let session = "session"
+    static let token = "token"
+    static let body = "body"
+    static let getSession = "a"
+    static let addEntry = "a"
+    static let getEntries = "a"
 }
 
 // MARK: - URLConvertible

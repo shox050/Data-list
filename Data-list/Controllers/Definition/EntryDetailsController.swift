@@ -1,5 +1,5 @@
 //
-//  EntryInfoController.swift
+//  EntryDetailsController.swift
 //  Data-list
 //
 //  Created by Vladimir on 27/09/2019.
@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol EntryInfoController {
-    
+protocol EntryDetailsController {
+    func configure(with configuration: InfoConfiguration)
 }
