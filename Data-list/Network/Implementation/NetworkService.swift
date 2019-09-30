@@ -38,7 +38,7 @@ extension NetworkService: NetworkRequestable {
             self?.defaultRequest(.getSession) { response in
                 
                 if let error = response.error {
-                    print("Response have error: ", error)
+                    print("Response in method getSession have error: ", error)
                     completion(.failure(.network))
                     return
                 }
@@ -70,7 +70,7 @@ extension NetworkService: NetworkRequestable {
             self?.defaultRequest(.getEntries) { response in
                 
                 if let error = response.error {
-                    print("Response have error: ", error)
+                    print("Response in method getEntries have error: ", error)
                     completion(.failure(.network))
                     return
                 }
@@ -102,7 +102,7 @@ extension NetworkService: NetworkRequestable {
             self?.defaultRequest(.addEntries(text)) { response in
                 
                 if let error = response.error {
-                    print("Response have error: ", error)
+                    print("Response in method addEntry have error: ", error)
                     completion(.failure(.network))
                     return
                 }

@@ -12,7 +12,7 @@ class EntryResponseConverter {
     
     private func getDate(fromTimeInterval interval: String) -> String {
         guard let interval = Double(interval) else {
-            print("Cant convert interval in String to Double")
+            print("Cant convert interval from String to Double")
             return "Wrong date"
         }
         

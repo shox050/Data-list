@@ -7,7 +7,6 @@
 //
 
 import Foundation
-//import NotificationCenter
 
 extension Notification.Name {
     static let networkIsReachable = Notification.Name("networkIsReachable")

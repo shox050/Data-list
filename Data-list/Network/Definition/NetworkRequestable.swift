@@ -15,5 +15,6 @@ protocol NetworkRequestable {
     func getEntries<T>(responseType: T.Type,
                        _ completion: @escaping (RequestResult<EntriesResponse, ResponseError>) -> Void)
     
-    func addEntry(withText text: String, _ completion: @escaping (RequestResult<Data, ResponseError>) -> Void)
+    func addEntry(withText text: String,
+                  _ completion: @escaping (RequestResult<Data, ResponseError>) -> Void)
 }

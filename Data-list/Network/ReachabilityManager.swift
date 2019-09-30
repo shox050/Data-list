@@ -13,9 +13,9 @@ class ReachabilityManager {
         
     static let shared = ReachabilityManager()
     
-    let manager = Alamofire.NetworkReachabilityManager(host: "www.apple.com")
+    private let manager = Alamofire.NetworkReachabilityManager(host: "https://bnet.i-partner.ru/testAPI/")
     
-    var isFirstLaunch = true
+    private var isFirstLaunch = true
     
     func startReachabilityObserver() {
         manager?.startListening()
@@ -27,7 +27,7 @@ class ReachabilityManager {
             switch status {
             case .notReachable, .unknown:
                 print("The network is not reachable")
-                this.showAlertNotRachable()
+                this.showAlertNotReachable()
                 this.isFirstLaunch = false
                 
             case .reachable(.wwan), .reachable(.ethernetOrWiFi):
@@ -41,7 +41,7 @@ class ReachabilityManager {
         }
     }
     
-    private func showAlertNotRachable() {
+    private func showAlertNotReachable() {
         let alertController = UIAlertController(title: "The network is not reachable",
                                                 message: "Please refresh data, when network will be reachable",
                                                 preferredStyle: .alert)

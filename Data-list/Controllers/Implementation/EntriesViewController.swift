@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import NotificationCenter
 
 class EntriesViewController: UITableViewController {
     
@@ -21,7 +20,8 @@ class EntriesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(networkIsReachable), name: .networkIsReachable, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(networkIsReachable),
+                                               name: .networkIsReachable, object: nil)
                         
         listViewModel.getSession() { [weak self] in
             guard let this = self else { return }

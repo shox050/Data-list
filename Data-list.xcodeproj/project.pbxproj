@@ -22,7 +22,6 @@
 		E746E116233CC312001DCB8E /* EntriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746E115233CC312001DCB8E /* EntriesViewController.swift */; };
 		E746E118233CC8B2001DCB8E /* SessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746E117233CC8B2001DCB8E /* SessionResponse.swift */; };
 		E746E11D233CE69A001DCB8E /* EntriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E746E11C233CE69A001DCB8E /* EntriesViewModel.swift */; };
-		E757ECCD233BF31A00DAAF11 /* NetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757ECC7233BF31A00DAAF11 /* NetworkRequestable.swift */; };
 		E757ECD0233BF31A00DAAF11 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757ECCB233BF31A00DAAF11 /* NetworkService.swift */; };
 		E757ECD1233BF31A00DAAF11 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757ECCC233BF31A00DAAF11 /* Endpoint.swift */; };
 		E757ECE2233C0C6100DAAF11 /* AuthorizationPathConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E757ECE1233C0C6100DAAF11 /* AuthorizationPathConfiguration.swift */; };
@@ -40,8 +39,8 @@
 		E7BDE01B233E9D53000F4816 /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BDE01A233E9D53000F4816 /* Entry.swift */; };
 		E7BDE01D233E9DD7000F4816 /* EntryResponseConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BDE01C233E9DD7000F4816 /* EntryResponseConverter.swift */; };
 		E7BDE01F233EA2DB000F4816 /* EntryResponseConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BDE01E233EA2DB000F4816 /* EntryResponseConvertable.swift */; };
+		E7E3A9BE2341C7D100B274B2 /* NetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E3A9BD2341C7D100B274B2 /* NetworkRequestable.swift */; };
 		E7EE683C233DF63200DF242B /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE683B233DF63200DF242B /* ReachabilityManager.swift */; };
-		E7EE683E233E031800DF242B /* UIViewController+alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE683D233E031800DF242B /* UIViewController+alert.swift */; };
 		E7EE6841233E0EA100DF242B /* UIAlertController+show.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE6840233E0EA100DF242B /* UIAlertController+show.swift */; };
 		E7EE6843233E11EF00DF242B /* EntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE6842233E11EF00DF242B /* EntryDetailsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -65,7 +64,6 @@
 		E746E115233CC312001DCB8E /* EntriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewController.swift; sourceTree = "<group>"; };
 		E746E117233CC8B2001DCB8E /* SessionResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionResponse.swift; sourceTree = "<group>"; };
 		E746E11C233CE69A001DCB8E /* EntriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesViewModel.swift; sourceTree = "<group>"; };
-		E757ECC7233BF31A00DAAF11 /* NetworkRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestable.swift; sourceTree = "<group>"; };
 		E757ECCB233BF31A00DAAF11 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E757ECCC233BF31A00DAAF11 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		E757ECE1233C0C6100DAAF11 /* AuthorizationPathConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationPathConfiguration.swift; sourceTree = "<group>"; };
@@ -83,8 +81,8 @@
 		E7BDE01A233E9D53000F4816 /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
 		E7BDE01C233E9DD7000F4816 /* EntryResponseConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryResponseConverter.swift; sourceTree = "<group>"; };
 		E7BDE01E233EA2DB000F4816 /* EntryResponseConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryResponseConvertable.swift; sourceTree = "<group>"; };
+		E7E3A9BD2341C7D100B274B2 /* NetworkRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestable.swift; sourceTree = "<group>"; };
 		E7EE683B233DF63200DF242B /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
-		E7EE683D233E031800DF242B /* UIViewController+alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+alert.swift"; sourceTree = "<group>"; };
 		E7EE6840233E0EA100DF242B /* UIAlertController+show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+show.swift"; sourceTree = "<group>"; };
 		E7EE6842233E11EF00DF242B /* EntryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailsViewController.swift; sourceTree = "<group>"; };
 		F8031369F2583290AA477345 /* Pods-Data-list.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data-list.release.xcconfig"; path = "Target Support Files/Pods-Data-list/Pods-Data-list.release.xcconfig"; sourceTree = "<group>"; };
@@ -205,8 +203,8 @@
 		E757ECC6233BF31A00DAAF11 /* Definition */ = {
 			isa = PBXGroup;
 			children = (
-				E757ECC7233BF31A00DAAF11 /* NetworkRequestable.swift */,
 				E77171DE23417FA700468E80 /* AuthorizationConfigurable.swift */,
+				E7E3A9BD2341C7D100B274B2 /* NetworkRequestable.swift */,
 			);
 			path = Definition;
 			sourceTree = "<group>";
@@ -334,7 +332,6 @@
 		E7EE683F233E032000DF242B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E7EE683D233E031800DF242B /* UIViewController+alert.swift */,
 				E7EE6840233E0EA100DF242B /* UIAlertController+show.swift */,
 				E724241F23415413002802EE /* Notification.swift */,
 			);
@@ -470,11 +467,9 @@
 				E757ECEC233C120F00DAAF11 /* EntriesResponse.swift in Sources */,
 				E757ECE2233C0C6100DAAF11 /* AuthorizationPathConfiguration.swift in Sources */,
 				E7EE6843233E11EF00DF242B /* EntryDetailsViewController.swift in Sources */,
-				E7EE683E233E031800DF242B /* UIViewController+alert.swift in Sources */,
 				E7EE6841233E0EA100DF242B /* UIAlertController+show.swift in Sources */,
 				E70C5A61233D5D3300003E9C /* AddEntryViewModel.swift in Sources */,
 				E7BDE01D233E9DD7000F4816 /* EntryResponseConverter.swift in Sources */,
-				E757ECCD233BF31A00DAAF11 /* NetworkRequestable.swift in Sources */,
 				E746E116233CC312001DCB8E /* EntriesViewController.swift in Sources */,
 				E7391B6F233BECAC00DB4223 /* AppDelegate.swift in Sources */,
 				E7BDE008233E283D000F4816 /* EntriesController.swift in Sources */,
@@ -487,6 +482,7 @@
 				E70C5A59233D573600003E9C /* EntryCell.swift in Sources */,
 				E77171E32341802A00468E80 /* EntriesModel.swift in Sources */,
 				E7B3971B233DD18E00D96951 /* AddEntryController.swift in Sources */,
+				E7E3A9BE2341C7D100B274B2 /* NetworkRequestable.swift in Sources */,
 				E724242023415413002802EE /* Notification.swift in Sources */,
 				E70C5A5F233D5C6E00003E9C /* AddEntryViewController.swift in Sources */,
 				E77171DF23417FA700468E80 /* AuthorizationConfigurable.swift in Sources */,

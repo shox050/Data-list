@@ -10,7 +10,7 @@ import UIKit
 
 class EntryCell: UITableViewCell {
     
-    private let lenght = 200
+    private let lenghtText = 200
     
     @IBOutlet private weak var lDateCreated: UILabel!
     @IBOutlet private weak var lDateChanged: UILabel!
@@ -19,11 +19,11 @@ class EntryCell: UITableViewCell {
     
     private func cropText(_ text: String) -> String {
         
-        guard text.count > lenght else {
+        guard text.count > lenghtText else {
             return text
         }
         
-        let index = text.index(text.startIndex, offsetBy: lenght)
+        let index = text.index(text.startIndex, offsetBy: lenghtText)
         return String(text[..<index])
     }
 }

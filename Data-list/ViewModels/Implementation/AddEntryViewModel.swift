@@ -11,13 +11,10 @@ import Foundation
 class AddEntryViewModel: AddEntryModel {
     
     private let networkService: NetworkRequestable = NetworkService()
-    
-    
 }
 
 
 extension AddEntryViewModel {
-    
     func addEntry(withText text: String, _ completion: @escaping () -> Void) {
         networkService.addEntry(withText: text) { response in
             

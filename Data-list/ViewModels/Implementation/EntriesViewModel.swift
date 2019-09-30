@@ -24,7 +24,6 @@ extension EntriesViewModel {
     func getSession(_ completion: @escaping () -> Void) {
         
         guard UserDefaults.standard.string(forKey: Keys.session) == nil else {
-            print("UserDefault have session value: ", UserDefaults.standard.string(forKey: Keys.session))
             completion()
             return
         }
@@ -37,7 +36,7 @@ extension EntriesViewModel {
                 
             case .success(let sessionResponse):
                 UserDefaults.standard.set(sessionResponse.data.session, forKey: Keys.session)
-                print("Session value is got: ", sessionResponse.data.session)
+                print("Session value is got")
                 completion()
             }
         }
@@ -62,8 +61,6 @@ extension EntriesViewModel {
                 
                 completion()
             }
-            
-
         }
     }
     

@@ -14,7 +14,7 @@ extension UIAlertController {
         let vc = UIViewController()
         vc.view.backgroundColor = .clear
         win.rootViewController = vc
-        win.windowLevel = UIWindow.Level.alert + 1  // Swift 3-4: UIWindowLevelAlert + 1
+        win.windowLevel = UIWindow.Level.alert + 1
         win.makeKeyAndVisible()
         vc.present(self, animated: true, completion: nil)
     }
