@@ -85,7 +85,6 @@ extension NetworkService: NetworkRequestable {
                 
                 do {
                     let entrisResponse = try decoder.decode(EntriesResponse.self, from: responseData)
-//                    print("entrisResponse ", entrisResponse)
                     completion(.success(entrisResponse))
                     
                 } catch let error {

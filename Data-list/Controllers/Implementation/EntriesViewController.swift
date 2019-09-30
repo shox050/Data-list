@@ -101,7 +101,6 @@ extension EntriesViewController: AddEntryDelegate {
 
 extension EntriesViewController {
     @objc func networkIsReachable() {
-        print("HERE networkIsReachable Notification")
         listViewModel.getEntries { [weak self] in
                         
             DispatchQueue.main.sync {
