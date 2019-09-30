@@ -9,6 +9,9 @@
 import UIKit
 import Alamofire
 
+//ReachabilityManager work correctly on real device.
+//On simulator have few problems with calling.
+
 class ReachabilityManager {
         
     static let shared = ReachabilityManager()
