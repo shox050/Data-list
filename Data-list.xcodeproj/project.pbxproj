@@ -40,6 +40,7 @@
 		E7BDE01D233E9DD7000F4816 /* EntryResponseConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BDE01C233E9DD7000F4816 /* EntryResponseConverter.swift */; };
 		E7BDE01F233EA2DB000F4816 /* EntryResponseConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BDE01E233EA2DB000F4816 /* EntryResponseConvertable.swift */; };
 		E7E3A9BE2341C7D100B274B2 /* NetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E3A9BD2341C7D100B274B2 /* NetworkRequestable.swift */; };
+		E7E8F1BC234397C30048001E /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8F1BB234397C30048001E /* AuthorizationViewController.swift */; };
 		E7EE683C233DF63200DF242B /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE683B233DF63200DF242B /* ReachabilityManager.swift */; };
 		E7EE6841233E0EA100DF242B /* UIAlertController+show.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE6840233E0EA100DF242B /* UIAlertController+show.swift */; };
 		E7EE6843233E11EF00DF242B /* EntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE6842233E11EF00DF242B /* EntryDetailsViewController.swift */; };
@@ -82,6 +83,7 @@
 		E7BDE01C233E9DD7000F4816 /* EntryResponseConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryResponseConverter.swift; sourceTree = "<group>"; };
 		E7BDE01E233EA2DB000F4816 /* EntryResponseConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryResponseConvertable.swift; sourceTree = "<group>"; };
 		E7E3A9BD2341C7D100B274B2 /* NetworkRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestable.swift; sourceTree = "<group>"; };
+		E7E8F1BB234397C30048001E /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		E7EE683B233DF63200DF242B /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		E7EE6840233E0EA100DF242B /* UIAlertController+show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+show.swift"; sourceTree = "<group>"; };
 		E7EE6842233E11EF00DF242B /* EntryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailsViewController.swift; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 				E746E115233CC312001DCB8E /* EntriesViewController.swift */,
 				E70C5A5E233D5C6E00003E9C /* AddEntryViewController.swift */,
 				E7EE6842233E11EF00DF242B /* EntryDetailsViewController.swift */,
+				E7E8F1BB234397C30048001E /* AuthorizationViewController.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7E8F1BC234397C30048001E /* AuthorizationViewController.swift in Sources */,
 				E7EE683C233DF63200DF242B /* ReachabilityManager.swift in Sources */,
 				E757ECD1233BF31A00DAAF11 /* Endpoint.swift in Sources */,
 				E77171DB2341732300468E80 /* RequestResult.swift in Sources */,
