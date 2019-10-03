@@ -67,7 +67,11 @@ enum Endpoint: URLRequestConvertible {
             var request = URLRequest(url: URL(string: Endpoint.baseUrl)!)
             
             request.httpMethod = HTTPMethod.post.rawValue
-            request.addValue(NetworkServiceConfiguration().token, forHTTPHeaderField: Keys.token)
+            
+            if let token = UserDefaults.standard.string(forKey: "authorizationToken") {
+                request.addValue(token, forHTTPHeaderField: Keys.token)
+            }
+            
             return request
         }()
         

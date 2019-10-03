@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "FA498888-4053-44F9-98B0-A1352E52C411"
+            uuid = "4EF77566-71C8-4C2E-BB70-D7C38C07BCFF"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Data-list/Controllers/Implementation/AuthorizationViewController.swift"
+            filePath = "Data-list/ViewModels/Implementation/AuthorizationViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
-            landmarkName = "actionAuthorization(_:)"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "authorization(with:email:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

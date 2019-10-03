@@ -15,27 +15,27 @@ class AuthorizationViewController: UIViewController {
     @IBOutlet private weak var tfEmail: UITextField!
     
     @IBAction private func actionAuthorization(_ sender: UIButton) {
-        authorization()
+        authorization() { [weak self] in
+            self?.performSegue(withIdentifier: "showEntriesViewController", sender: self)
+        }
     }
     
     let networkService = NetworkService()
     let authorizationViewModel = AuthorizationViewModel()
-    
-//    let authorizationPathConfiguration = AuthorizationPathConfiguration()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
     }
     
-    func authorization() {
+    func authorization(_ completion: @escaping () -> Void) {
         
         guard let name = tfName.text else { return }
         guard let email = tfEmail.text else { return }
         
         authorizationViewModel.authorization(with: name, email: email) {
-            
+            completion()
         }
     }
 }

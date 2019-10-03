@@ -11,6 +11,7 @@ import UIKit
 class AuthorizationViewModel {
     
     let networkService: NetworkRequestable = NetworkService()
+    
 }
 
 extension AuthorizationViewModel {
@@ -22,7 +23,12 @@ extension AuthorizationViewModel {
                 print("Method authorization get error from response: ", error)
                 
             case .success(let responseData):
-                let a = self?.fetchToken(from: responseData)
+                guard let token = self?.fetchToken(from: responseData) else {
+                    print("Token not got, authorization is failed")
+                    return
+                }
+                
+                UserDefaults.standard.set(token, forKey: "authorizationToken")
                 
                 completion()
             }
