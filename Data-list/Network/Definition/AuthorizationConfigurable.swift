@@ -9,5 +9,5 @@
 import Foundation
 
 protocol AuthorizationConfigurable {
-    var url: URL? { get }
+    func authorizationUrl(with name: String, _ email: String) -> URL?
 }

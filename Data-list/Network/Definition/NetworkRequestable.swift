@@ -9,6 +9,8 @@
 import Foundation
 
 protocol NetworkRequestable {
+    func getToken(byName name: String, email: String, _ completion: @escaping(RequestResult<Data, ResponseError>) -> Void)
+    
     func getSession<T>(responseType: T.Type,
                        _ completion: @escaping(RequestResult<SessionResponse, ResponseError>) -> Void) where T: Decodable
     
