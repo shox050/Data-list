@@ -10,7 +10,7 @@ import UIKit
 
 class EntriesViewController: UITableViewController {
     
-    private let listViewModel = EntriesViewModel()
+    private let entriesViewModel = EntriesViewModel()
     fileprivate var infoConfiguration: InfoConfiguration?
 
     
@@ -22,11 +22,12 @@ class EntriesViewController: UITableViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(networkIsReachable),
                                                name: .networkIsReachable, object: nil)
-                        
-        listViewModel.getSession() { [weak self] in
+
+        entriesViewModel.getSession() { [weak self] in
             guard let this = self else { return }
-            
-            this.listViewModel.getEntries() {
+
+
+            this.entriesViewModel.getEntries() {
                 DispatchQueue.main.sync {
                     this.tvList.reloadData()
                 }
@@ -59,7 +60,7 @@ class EntriesViewController: UITableViewController {
 // MARK: - UITableViewDataSource
 extension EntriesViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return listViewModel.entries.count
+        return entriesViewModel.entries.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -68,7 +69,7 @@ extension EntriesViewController {
             return UITableViewCell()
         }
         
-        entryCell.configure(with: listViewModel.entries[indexPath.row])
+        entryCell.configure(with: entriesViewModel.entries[indexPath.row])
         
         return entryCell
     }
@@ -80,7 +81,7 @@ extension EntriesViewController {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        infoConfiguration = InfoConfiguration(entry: listViewModel.entries[indexPath.row])
+        infoConfiguration = InfoConfiguration(entry: entriesViewModel.entries[indexPath.row])
         
         performSegue(withIdentifier: "showEntryInfoViewController", sender: self)
     }
@@ -90,7 +91,7 @@ extension EntriesViewController {
 // MARK: - AddEntryDelegate
 extension EntriesViewController: AddEntryDelegate {
     func didAddEntry() {
-        listViewModel.getEntries { [weak self] in
+        entriesViewModel.getEntries { [weak self] in
             DispatchQueue.main.sync {
                 self?.tvList.reloadData()
             }
@@ -101,8 +102,8 @@ extension EntriesViewController: AddEntryDelegate {
 
 extension EntriesViewController {
     @objc func networkIsReachable() {
-        listViewModel.getEntries { [weak self] in
-                        
+        entriesViewModel.getEntries { [weak self] in
+            
             DispatchQueue.main.sync {
                 self?.tvList.reloadData()
             }

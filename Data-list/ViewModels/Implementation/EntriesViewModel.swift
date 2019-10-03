@@ -21,6 +21,7 @@ class EntriesViewModel {
 
 // MARK: - Methods
 extension EntriesViewModel {
+    
     func getSession(_ completion: @escaping () -> Void) {
         
         guard UserDefaults.standard.string(forKey: Keys.session) == nil else {

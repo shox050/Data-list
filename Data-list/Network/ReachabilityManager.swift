@@ -6,35 +6,36 @@
 //  Copyright © 2019 VladimirYakutin. All rights reserved.
 //
 
-import UIKit
+import Foundation
 import Alamofire
+
 
 //ReachabilityManager work correctly on real device.
 //On simulator have few problems with calling.
 
 class ReachabilityManager {
-        
+
     static let shared = ReachabilityManager()
-    
+
     private let manager = Alamofire.NetworkReachabilityManager(host: "https://bnet.i-partner.ru/testAPI/")
-    
+
     private var isFirstLaunch = true
-    
+
     func startReachabilityObserver() {
         manager?.startListening()
 
         manager?.listener = { [weak self] status in
-            
+
             guard let this = self else { return }
-            
+
             switch status {
             case .notReachable, .unknown:
                 print("The network is not reachable")
                 this.showAlertNotReachable()
                 this.isFirstLaunch = false
-                
-            case .reachable(.wwan), .reachable(.ethernetOrWiFi):
-                
+
+            case .reachable:
+
                 if !this.isFirstLaunch {
                     this.showAlertForReachable()
                 }
@@ -43,21 +44,21 @@ class ReachabilityManager {
             }
         }
     }
-    
+
     private func showAlertNotReachable() {
         let alertController = UIAlertController(title: "The network is not reachable",
                                                 message: "Please refresh data, when network will be reachable",
                                                 preferredStyle: .alert)
-        
+
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         alertController.show()
     }
-    
+
     private func showAlertForReachable() {
         let alertController = UIAlertController(title: "The network is reachable",
                                                 message: "You can refresh data",
                                                 preferredStyle: .alert)
-        
+
         alertController.addAction(UIAlertAction(title: "Refresh",
                                                 style: .default,
                                                 handler: { action in
