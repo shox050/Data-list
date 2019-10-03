@@ -14,6 +14,7 @@
 		E70C5A61233D5D3300003E9C /* AddEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C5A60233D5D3300003E9C /* AddEntryViewModel.swift */; };
 		E724241E233FC380002802EE /* InfoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724241D233FC380002802EE /* InfoConfiguration.swift */; };
 		E724242023415413002802EE /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724241F23415413002802EE /* Notification.swift */; };
+		E7389F782344DA7800A85678 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7389F772344DA7800A85678 /* AuthorizationViewModel.swift */; };
 		E7391B6F233BECAC00DB4223 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7391B6E233BECAC00DB4223 /* AppDelegate.swift */; };
 		E7391B76233BECAC00DB4223 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7391B74233BECAC00DB4223 /* Main.storyboard */; };
 		E7391B78233BECAD00DB4223 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7391B77233BECAD00DB4223 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		E70C5A60233D5D3300003E9C /* AddEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewModel.swift; sourceTree = "<group>"; };
 		E724241D233FC380002802EE /* InfoConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoConfiguration.swift; sourceTree = "<group>"; };
 		E724241F23415413002802EE /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		E7389F772344DA7800A85678 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
 		E7391B6B233BECAC00DB4223 /* Data-list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Data-list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7391B6E233BECAC00DB4223 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7391B75233BECAC00DB4223 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				E746E11C233CE69A001DCB8E /* EntriesViewModel.swift */,
 				E70C5A60233D5D3300003E9C /* AddEntryViewModel.swift */,
 				E7BDE00B233E2880000F4816 /* EntryDetailsViewModel.swift */,
+				E7389F772344DA7800A85678 /* AuthorizationViewModel.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 				E7EE6841233E0EA100DF242B /* UIAlertController+show.swift in Sources */,
 				E70C5A61233D5D3300003E9C /* AddEntryViewModel.swift in Sources */,
 				E7BDE01D233E9DD7000F4816 /* EntryResponseConverter.swift in Sources */,
+				E7389F782344DA7800A85678 /* AuthorizationViewModel.swift in Sources */,
 				E746E116233CC312001DCB8E /* EntriesViewController.swift in Sources */,
 				E7391B6F233BECAC00DB4223 /* AppDelegate.swift in Sources */,
 				E7BDE008233E283D000F4816 /* EntriesController.swift in Sources */,

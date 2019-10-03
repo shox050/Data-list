@@ -22,10 +22,10 @@ class EntriesViewController: UITableViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(networkIsReachable),
                                                name: .networkIsReachable, object: nil)
-                        
+
         listViewModel.getSession() { [weak self] in
             guard let this = self else { return }
-            
+
             this.listViewModel.getEntries() {
                 DispatchQueue.main.sync {
                     this.tvList.reloadData()

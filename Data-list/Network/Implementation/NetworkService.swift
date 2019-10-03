@@ -32,6 +32,29 @@ class NetworkService {
 // MARK: - NetworkRequestable
 extension NetworkService: NetworkRequestable {
     
+    func getToken(byName name: String, email: String, _ completion: @escaping(RequestResult<Data, ResponseError>) -> Void) {
+        
+        executionQueue.async { [weak self] in
+            
+            self?.defaultRequest(.getToken(name, email), { response in
+                
+                if let error = response.error {
+                    print("Response in method getToken have error: ", error)
+                    completion(.failure(.network))
+                    return
+                }
+                
+                guard let responseData = response.data else {
+                    print("No data from response - getToken")
+                    completion(.failure(.parsing))
+                    return
+                }
+                
+                completion(.success(responseData))
+            })
+        }
+    }
+    
     func getSession<T>(responseType: T.Type, _ completion: @escaping(RequestResult<SessionResponse, ResponseError>) -> Void) where T: Decodable {
         
         executionQueue.async { [weak self] in

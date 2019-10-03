@@ -13,6 +13,7 @@ enum Endpoint: URLRequestConvertible {
     
     static let baseUrl = "https://bnet.i-partner.ru/testAPI/"
     
+    case getToken(String, String)
     case getSession
     case getEntries
     case addEntries(String)
@@ -20,6 +21,9 @@ enum Endpoint: URLRequestConvertible {
     
     var parameters: [String: Any]? {
         switch self {
+        case .getToken(let name, let email):
+            return [Keys.getToken: endpointPath.rawValue, Keys.name: name, Keys.email: email]
+            
         case .getSession:
             return [Keys.getSession: endpointPath.rawValue]
 
@@ -46,6 +50,7 @@ enum Endpoint: URLRequestConvertible {
         case getSession = "new_session"
         case getEntries = "get_entries"
         case addEntry = "add_entry"
+        case getToken = "get_token"
     }
     
     private var endpointPath: EndpointPath {
@@ -53,11 +58,12 @@ enum Endpoint: URLRequestConvertible {
         case .getSession: return .getSession
         case .getEntries: return .getEntries
         case .addEntries(_): return .addEntry
+        case .getToken(_, _): return .getToken
         }
     }
     
     func asURLRequest() throws -> URLRequest {
-        let request: URLRequest = {
+        var request: URLRequest = {
             var request = URLRequest(url: URL(string: Endpoint.baseUrl)!)
             
             request.httpMethod = HTTPMethod.post.rawValue
@@ -76,6 +82,9 @@ fileprivate struct Keys {
     static let getSession = "a"
     static let addEntry = "a"
     static let getEntries = "a"
+    static let getToken = "a"
+    static let name = "name"
+    static let email = "email"
 }
 
 // MARK: - URLConvertible

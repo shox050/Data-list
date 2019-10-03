@@ -7,35 +7,35 @@
 //
 
 import UIKit
-import WebKit
+import Alamofire
 
 class AuthorizationViewController: UIViewController {
     
-    let authorizationPathConfiguration = AuthorizationPathConfiguration()
-    @IBOutlet private weak var wvAuthorization: UIWebView!
+    @IBOutlet private weak var tfName: UITextField!
+    @IBOutlet private weak var tfEmail: UITextField!
+    
+    @IBAction private func actionAuthorization(_ sender: UIButton) {
+        authorization()
+    }
+    
+    let networkService = NetworkService()
+    let authorizationViewModel = AuthorizationViewModel()
+    
+//    let authorizationPathConfiguration = AuthorizationPathConfiguration()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard let url = authorizationPathConfiguration.url else {
-            print("No url from authorizationPathConfiguration.url")
-            return
+        
+    }
+    
+    func authorization() {
+        
+        guard let name = tfName.text else { return }
+        guard let email = tfEmail.text else { return }
+        
+        authorizationViewModel.authorization(with: name, email: email) {
+            
         }
-
-        let request = URLRequest(url: url)
-        
-        wvAuthorization.loadRequest(request)
-    }
-    
-    
-}
-
-
-extension AuthorizationViewController: WKNavigationDelegate  {
-    func webView(_ webView: WKWebView,
-                 decidePolicyFor navigationAction: WKNavigationAction,
-                 decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
     }
 }
-
