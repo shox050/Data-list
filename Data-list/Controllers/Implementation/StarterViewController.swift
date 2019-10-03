@@ -30,3 +30,9 @@ class StarterViewController: UIViewController {
         performSegue(withIdentifier: Segue.entries.rawValue, sender: self)
     }
 }
+
+
+// MARK: - StarterController
+extension StarterViewController: StarterController {
+    
+}

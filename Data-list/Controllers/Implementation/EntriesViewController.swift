@@ -103,7 +103,7 @@ extension EntriesViewController: AddEntryDelegate {
 extension EntriesViewController {
     @objc func networkIsReachable() {
         entriesViewModel.getEntries { [weak self] in
-                        
+            
             DispatchQueue.main.sync {
                 self?.tvList.reloadData()
             }

@@ -11,7 +11,6 @@ import Alamofire
 
 class NetworkService {
     
-    private let networkServiceConfiguration = NetworkServiceConfiguration()
     private let sessionManager = Alamofire.SessionManager()
     private let executionQueue = DispatchQueue(label: "NetworkExecutionQueue",
                                                qos: .userInitiated,

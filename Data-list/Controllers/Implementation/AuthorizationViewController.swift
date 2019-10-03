@@ -28,10 +28,11 @@ class AuthorizationViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
     }
     
-    func authorization(_ completion: @escaping () -> Void) {
+    private func authorization(_ completion: @escaping () -> Void) {
         
         guard let name = tfName.text else { return }
         guard let email = tfEmail.text else { return }
@@ -40,4 +41,9 @@ class AuthorizationViewController: UIViewController {
             completion()
         }
     }
+}
+
+// MARK: - AuthorizationController
+extension AuthorizationViewController: AuthorizationController {
+    
 }
