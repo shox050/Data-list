@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ciH-tH-hCB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Vdc-GT-Llf">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -13,7 +13,7 @@
             <objects>
                 <viewController id="ciH-tH-hCB" customClass="AuthorizationViewController" customModule="Data_list" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Kq-wm-qiT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Vladimir" borderStyle="roundedRect" placeholder="Enter name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5wo-IR-kXH">
@@ -280,20 +280,27 @@
             </objects>
             <point key="canvasLocation" x="1956" y="-242"/>
         </scene>
-        <!--View Controller-->
+        <!--Starter View Controller-->
         <scene sceneID="I9Y-je-YqS">
             <objects>
-                <viewController id="Vdc-GT-Llf" sceneMemberID="viewController">
+                <viewController id="Vdc-GT-Llf" customClass="StarterViewController" customModule="Data_list" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="91V-mp-iYw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="7p5-Iz-96X"/>
                     </view>
+                    <connections>
+                        <segue destination="ciH-tH-hCB" kind="show" identifier="segueAuthorization" id="OVl-Gf-Dkx"/>
+                        <segue destination="MGE-xd-VJU" kind="show" identifier="segueEntries" id="dQx-EE-6Pu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="od0-mB-mou" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-866" y="-226"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="dQx-EE-6Pu"/>
+    </inferredMetricsTieBreakers>
 </document>

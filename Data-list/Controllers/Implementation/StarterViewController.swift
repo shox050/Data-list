@@ -19,6 +19,14 @@ class StarterViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        let tokenRepository: TokenStorable = TokenRepository()
         
+        guard (tokenRepository.getToken()) != nil else {
+            print("No token")
+            performSegue(withIdentifier: Segue.authorization.rawValue, sender: self)
+            return
+        }
+        
+        performSegue(withIdentifier: Segue.entries.rawValue, sender: self)
     }
 }

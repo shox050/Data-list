@@ -10,8 +10,8 @@ import UIKit
 
 class AuthorizationViewModel {
     
-    let tokenRepository: TokenStorable = TokenRepository()
-    let networkService: NetworkRequestable = NetworkService()
+    private let tokenRepository: TokenStorable = TokenRepository()
+    private let networkService: NetworkRequestable = NetworkService()
     
 }
 
