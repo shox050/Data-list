@@ -10,6 +10,7 @@ import UIKit
 
 class AuthorizationViewModel {
     
+    let tokenRepository: TokenStorable = TokenRepository()
     let networkService: NetworkRequestable = NetworkService()
     
 }
@@ -28,7 +29,7 @@ extension AuthorizationViewModel {
                     return
                 }
                 
-                UserDefaults.standard.set(token, forKey: "authorizationToken")
+                self?.tokenRepository.setToken(token)
                 
                 completion()
             }

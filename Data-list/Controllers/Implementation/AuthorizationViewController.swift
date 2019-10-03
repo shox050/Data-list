@@ -28,8 +28,7 @@ class AuthorizationViewController: UIViewController {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+
     }
     
     func authorization(_ completion: @escaping () -> Void) {

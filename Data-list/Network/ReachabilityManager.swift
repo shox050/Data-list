@@ -30,13 +30,13 @@ class ReachabilityManager {
             switch status {
             case .notReachable, .unknown:
                 print("The network is not reachable")
-                this.showAlertNotReachable()
+//                this.showAlertNotReachable()
                 this.isFirstLaunch = false
                 
             case .reachable(.wwan), .reachable(.ethernetOrWiFi):
                 
                 if !this.isFirstLaunch {
-                    this.showAlertForReachable()
+//                    this.showAlertForReachable()
                 }
                 this.isFirstLaunch = false
                 print("The network is reachable")

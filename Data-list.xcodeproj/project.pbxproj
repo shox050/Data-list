@@ -12,6 +12,9 @@
 		E70C5A5C233D593500003E9C /* Configurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C5A5B233D593500003E9C /* Configurable.swift */; };
 		E70C5A5F233D5C6E00003E9C /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C5A5E233D5C6E00003E9C /* AddEntryViewController.swift */; };
 		E70C5A61233D5D3300003E9C /* AddEntryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70C5A60233D5D3300003E9C /* AddEntryViewModel.swift */; };
+		E7163C6A23467EB300C44580 /* StarterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7163C6923467EB300C44580 /* StarterViewController.swift */; };
+		E7163C712346803B00C44580 /* TokenRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7163C702346803B00C44580 /* TokenRepository.swift */; };
+		E7163C732346813300C44580 /* TokenStorable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7163C722346813300C44580 /* TokenStorable.swift */; };
 		E724241E233FC380002802EE /* InfoConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724241D233FC380002802EE /* InfoConfiguration.swift */; };
 		E724242023415413002802EE /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724241F23415413002802EE /* Notification.swift */; };
 		E7389F782344DA7800A85678 /* AuthorizationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7389F772344DA7800A85678 /* AuthorizationViewModel.swift */; };
@@ -54,6 +57,9 @@
 		E70C5A5B233D593500003E9C /* Configurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurable.swift; sourceTree = "<group>"; };
 		E70C5A5E233D5C6E00003E9C /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
 		E70C5A60233D5D3300003E9C /* AddEntryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewModel.swift; sourceTree = "<group>"; };
+		E7163C6923467EB300C44580 /* StarterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterViewController.swift; sourceTree = "<group>"; };
+		E7163C702346803B00C44580 /* TokenRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenRepository.swift; sourceTree = "<group>"; };
+		E7163C722346813300C44580 /* TokenStorable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TokenStorable.swift; path = "Data-list/Repositories/Implementation/TokenStorable.swift"; sourceTree = SOURCE_ROOT; };
 		E724241D233FC380002802EE /* InfoConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoConfiguration.swift; sourceTree = "<group>"; };
 		E724241F23415413002802EE /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		E7389F772344DA7800A85678 /* AuthorizationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewModel.swift; sourceTree = "<group>"; };
@@ -130,6 +136,31 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		E7163C6D2346800C00C44580 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				E7163C6F2346802B00C44580 /* Definition */,
+				E7163C6E2346801F00C44580 /* Implementation */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		E7163C6E2346801F00C44580 /* Implementation */ = {
+			isa = PBXGroup;
+			children = (
+				E7163C702346803B00C44580 /* TokenRepository.swift */,
+			);
+			path = Implementation;
+			sourceTree = "<group>";
+		};
+		E7163C6F2346802B00C44580 /* Definition */ = {
+			isa = PBXGroup;
+			children = (
+				E7163C722346813300C44580 /* TokenStorable.swift */,
+			);
+			path = Definition;
+			sourceTree = "<group>";
+		};
 		E7391B62233BECAC00DB4223 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +182,7 @@
 		E7391B6D233BECAC00DB4223 /* Data-list */ = {
 			isa = PBXGroup;
 			children = (
+				E7163C6D2346800C00C44580 /* Repositories */,
 				E7BDE018233E9796000F4816 /* Models */,
 				E7BDE00D233E975B000F4816 /* Converters */,
 				E70C5A5A233D591800003E9C /* Common */,
@@ -288,6 +320,7 @@
 				E70C5A5E233D5C6E00003E9C /* AddEntryViewController.swift */,
 				E7EE6842233E11EF00DF242B /* EntryDetailsViewController.swift */,
 				E7E8F1BB234397C30048001E /* AuthorizationViewController.swift */,
+				E7163C6923467EB300C44580 /* StarterViewController.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -482,11 +515,14 @@
 				E7391B6F233BECAC00DB4223 /* AppDelegate.swift in Sources */,
 				E7BDE008233E283D000F4816 /* EntriesController.swift in Sources */,
 				E7BDE00A233E285B000F4816 /* EntryDetailsController.swift in Sources */,
+				E7163C6A23467EB300C44580 /* StarterViewController.swift in Sources */,
 				E70C5A5C233D593500003E9C /* Configurable.swift in Sources */,
+				E7163C732346813300C44580 /* TokenStorable.swift in Sources */,
 				E77171DD2341739400468E80 /* ResponseError.swift in Sources */,
 				E757ECD0233BF31A00DAAF11 /* NetworkService.swift in Sources */,
 				E746E114233CC1B9001DCB8E /* NetworkServiceConfiguration.swift in Sources */,
 				E7BDE01B233E9D53000F4816 /* Entry.swift in Sources */,
+				E7163C712346803B00C44580 /* TokenRepository.swift in Sources */,
 				E70C5A59233D573600003E9C /* EntryCell.swift in Sources */,
 				E77171E32341802A00468E80 /* EntriesModel.swift in Sources */,
 				E7B3971B233DD18E00D96951 /* AddEntryController.swift in Sources */,

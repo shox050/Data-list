@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 enum Endpoint: URLRequestConvertible {
-    
+        
     static let baseUrl = "https://bnet.i-partner.ru/testAPI/"
     
     case getToken(String, String)
@@ -63,12 +63,15 @@ enum Endpoint: URLRequestConvertible {
     }
     
     func asURLRequest() throws -> URLRequest {
+        
+        let tokenRepository: TokenStorable = TokenRepository()
+        
         var request: URLRequest = {
             var request = URLRequest(url: URL(string: Endpoint.baseUrl)!)
             
             request.httpMethod = HTTPMethod.post.rawValue
             
-            if let token = UserDefaults.standard.string(forKey: "authorizationToken") {
+            if let token = tokenRepository.getToken() {
                 request.addValue(token, forHTTPHeaderField: Keys.token)
             }
             
