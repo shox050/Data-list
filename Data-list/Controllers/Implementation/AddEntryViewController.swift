@@ -29,6 +29,11 @@ class AddEntryViewController: UIViewController {
         }
     }
     
+    @IBAction func actionCancel(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
