@@ -16,7 +16,10 @@ class AuthorizationViewController: UIViewController {
     
     @IBAction private func actionAuthorization(_ sender: UIButton) {
         authorization() { [weak self] in
-            self?.performSegue(withIdentifier: "showEntriesViewController", sender: self)
+            
+            DispatchQueue.main.sync {
+                self?.performSegue(withIdentifier: "showEntriesViewController", sender: self)
+            }
         }
     }
     
