@@ -35,6 +35,7 @@
 		E77171E32341802A00468E80 /* EntriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77171E22341802A00468E80 /* EntriesModel.swift */; };
 		E77171E5234180C700468E80 /* AddEntryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77171E4234180C700468E80 /* AddEntryModel.swift */; };
 		E77171E7234180FC00468E80 /* EntryDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77171E6234180FC00468E80 /* EntryDetailsModel.swift */; };
+		E7979D6123472721006D52E7 /* FoundationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7979D6023472721006D52E7 /* FoundationViewController.swift */; };
 		E7B3971B233DD18E00D96951 /* AddEntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B3971A233DD18E00D96951 /* AddEntryController.swift */; };
 		E7BDE008233E283D000F4816 /* EntriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BDE007233E283D000F4816 /* EntriesController.swift */; };
 		E7BDE00A233E285B000F4816 /* EntryDetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BDE009233E285B000F4816 /* EntryDetailsController.swift */; };
@@ -44,7 +45,7 @@
 		E7BDE01F233EA2DB000F4816 /* EntryResponseConvertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BDE01E233EA2DB000F4816 /* EntryResponseConvertable.swift */; };
 		E7E3A9BE2341C7D100B274B2 /* NetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E3A9BD2341C7D100B274B2 /* NetworkRequestable.swift */; };
 		E7E8F1BC234397C30048001E /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7E8F1BB234397C30048001E /* AuthorizationViewController.swift */; };
-		E7EE683C233DF63200DF242B /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE683B233DF63200DF242B /* ReachabilityManager.swift */; };
+		E7EE683C233DF63200DF242B /* ReachabilityObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE683B233DF63200DF242B /* ReachabilityObserver.swift */; };
 		E7EE6841233E0EA100DF242B /* UIAlertController+show.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE6840233E0EA100DF242B /* UIAlertController+show.swift */; };
 		E7EE6843233E11EF00DF242B /* EntryDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7EE6842233E11EF00DF242B /* EntryDetailsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +82,7 @@
 		E77171E22341802A00468E80 /* EntriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesModel.swift; sourceTree = "<group>"; };
 		E77171E4234180C700468E80 /* AddEntryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryModel.swift; sourceTree = "<group>"; };
 		E77171E6234180FC00468E80 /* EntryDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailsModel.swift; sourceTree = "<group>"; };
+		E7979D6023472721006D52E7 /* FoundationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationViewController.swift; sourceTree = "<group>"; };
 		E7B3971A233DD18E00D96951 /* AddEntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryController.swift; sourceTree = "<group>"; };
 		E7BDE007233E283D000F4816 /* EntriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesController.swift; sourceTree = "<group>"; };
 		E7BDE009233E285B000F4816 /* EntryDetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailsController.swift; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 		E7BDE01E233EA2DB000F4816 /* EntryResponseConvertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryResponseConvertable.swift; sourceTree = "<group>"; };
 		E7E3A9BD2341C7D100B274B2 /* NetworkRequestable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequestable.swift; sourceTree = "<group>"; };
 		E7E8F1BB234397C30048001E /* AuthorizationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
-		E7EE683B233DF63200DF242B /* ReachabilityManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		E7EE683B233DF63200DF242B /* ReachabilityObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityObserver.swift; sourceTree = "<group>"; };
 		E7EE6840233E0EA100DF242B /* UIAlertController+show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+show.swift"; sourceTree = "<group>"; };
 		E7EE6842233E11EF00DF242B /* EntryDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailsViewController.swift; sourceTree = "<group>"; };
 		F8031369F2583290AA477345 /* Pods-Data-list.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Data-list.release.xcconfig"; path = "Target Support Files/Pods-Data-list/Pods-Data-list.release.xcconfig"; sourceTree = "<group>"; };
@@ -227,7 +229,7 @@
 			children = (
 				E77171DA2341732300468E80 /* RequestResult.swift */,
 				E77171DC2341739400468E80 /* ResponseError.swift */,
-				E7EE683B233DF63200DF242B /* ReachabilityManager.swift */,
+				E7EE683B233DF63200DF242B /* ReachabilityObserver.swift */,
 				E757ECC6233BF31A00DAAF11 /* Definition */,
 				E757ECC8233BF31A00DAAF11 /* Implementation */,
 			);
@@ -313,6 +315,7 @@
 		E7B39719233DD17500D96951 /* Implementation */ = {
 			isa = PBXGroup;
 			children = (
+				E7979D6023472721006D52E7 /* FoundationViewController.swift */,
 				E746E115233CC312001DCB8E /* EntriesViewController.swift */,
 				E70C5A5E233D5C6E00003E9C /* AddEntryViewController.swift */,
 				E7EE6842233E11EF00DF242B /* EntryDetailsViewController.swift */,
@@ -498,9 +501,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7E8F1BC234397C30048001E /* AuthorizationViewController.swift in Sources */,
-				E7EE683C233DF63200DF242B /* ReachabilityManager.swift in Sources */,
+				E7EE683C233DF63200DF242B /* ReachabilityObserver.swift in Sources */,
 				E757ECD1233BF31A00DAAF11 /* Endpoint.swift in Sources */,
 				E77171DB2341732300468E80 /* RequestResult.swift in Sources */,
+				E7979D6123472721006D52E7 /* FoundationViewController.swift in Sources */,
 				E757ECEC233C120F00DAAF11 /* EntriesResponse.swift in Sources */,
 				E7EE6843233E11EF00DF242B /* EntryDetailsViewController.swift in Sources */,
 				E7EE6841233E0EA100DF242B /* UIAlertController+show.swift in Sources */,

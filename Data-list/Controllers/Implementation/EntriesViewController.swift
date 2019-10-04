@@ -8,8 +8,8 @@
 
 import UIKit
 
-class EntriesViewController: UITableViewController {
-    
+class EntriesViewController: FoundationViewController {
+        
     private let entriesViewModel = EntriesViewModel()
     fileprivate var infoConfiguration: InfoConfiguration?
 
@@ -20,12 +20,15 @@ class EntriesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(networkIsReachable),
-                                               name: .networkIsReachable, object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reachabilityDidChange(_:)),
+                                               name: ReachabilityObserver.Notification.didChange.name,
+                                               object: nil)
+        
+        ReachabilityObserver.shared.startObsrving()
 
         entriesViewModel.getSession() { [weak self] in
             guard let this = self else { return }
-
 
             this.entriesViewModel.getEntries() {
                 DispatchQueue.main.sync {
@@ -52,18 +55,17 @@ class EntriesViewController: UITableViewController {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: .networkIsReachable, object: nil)
+        ReachabilityObserver.shared.stopObserving()
     }
-
 }
 
 // MARK: - UITableViewDataSource
-extension EntriesViewController {
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension EntriesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return entriesViewModel.entries.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
                 
         guard let entryCell = tableView.dequeueReusableCell(withIdentifier: "entryCell") as? EntryCell else {
             return UITableViewCell()
@@ -76,8 +78,8 @@ extension EntriesViewController {
 }
 
 // MARK: - UITableViewDelegate
-extension EntriesViewController {
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+extension EntriesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
@@ -101,12 +103,23 @@ extension EntriesViewController: AddEntryDelegate {
 
 
 extension EntriesViewController {
-    @objc func networkIsReachable() {
-        entriesViewModel.getEntries { [weak self] in
+    @objc func reachabilityDidChange(_ notification: Notification) {
+        
+        switch ReachabilityObserver.shared.isReachable {
+        case false:
+            presentAlert(with: "Network is lost", message: "Check your connect")
             
-            DispatchQueue.main.sync {
-                self?.tvList.reloadData()
+        case true:
+            let action = UIAlertAction(title: "Update", style: .default) { [weak self] action in
+                self?.entriesViewModel.getEntries {
+                    print("UPDATE")
+                    DispatchQueue.main.sync {
+                        self?.tvList.reloadData()
+                    }
+                }
             }
+            
+            presentAlert(with: "Network is reachable", message: "You can update data", action: action)
         }
     }
 }
