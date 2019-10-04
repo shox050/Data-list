@@ -14,9 +14,6 @@ class EntriesViewModel {
     
     private let networkService: NetworkRequestable = NetworkService()
     private let entryResponseConverter: EntryResponseConvertable = EntryResponseConverter()
-    
-    
-    
 }
 
 // MARK: - Methods
