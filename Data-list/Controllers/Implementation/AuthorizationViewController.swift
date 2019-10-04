@@ -29,7 +29,10 @@ class AuthorizationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tfName.delegate = self
+        tfEmail.delegate = self
         
+        tfName.becomeFirstResponder()
     }
     
     private func authorization(_ completion: @escaping () -> Void) {
@@ -46,4 +49,18 @@ class AuthorizationViewController: UIViewController {
 // MARK: - AuthorizationController
 extension AuthorizationViewController: AuthorizationController {
     
+}
+
+extension AuthorizationViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        if textField.returnKeyType == .next {
+            tfEmail.becomeFirstResponder()
+        } else if textField.returnKeyType == .done {
+            tfName.resignFirstResponder()
+            tfEmail.resignFirstResponder()
+        }
+        
+        return false
+    }
 }

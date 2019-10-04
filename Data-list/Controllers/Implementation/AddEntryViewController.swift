@@ -14,6 +14,8 @@ protocol AddEntryDelegate: class {
 
 class AddEntryViewController: UIViewController {
     
+    
+    
     weak var delegate: AddEntryDelegate?
         
     private let addEntryViewModel = AddEntryViewModel()
@@ -37,7 +39,7 @@ class AddEntryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         tvText.becomeFirstResponder()
     }
 }
@@ -47,4 +49,3 @@ class AddEntryViewController: UIViewController {
 extension AddEntryViewController: AddEntryController {
     
 }
-
